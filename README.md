@@ -1,3 +1,3 @@
-## BelajarBareng
+## Angular 2
 
-Let's learn about everything with us at BelajarBareng. 
+Latihan membuat project menggunakan Angular 2. 
