@@ -10,15 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var forms_1 = require('@angular/forms');
+var router_1 = require('@angular/router');
+var app_routes_1 = require('./app.routes');
 var app_component_1 = require('./app.component');
+var home_component_1 = require('./home.component');
+var about_component_1 = require('./about.component');
+var contact_component_1 = require('./contact.component');
+var common_1 = require('@angular/common');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent]
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, router_1.RouterModule.forRoot(app_routes_1.routes)],
+            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, about_component_1.AboutComponent, contact_component_1.ContactComponent],
+            bootstrap: [app_component_1.AppComponent],
+            providers: [{ provide: common_1.APP_BASE_HREF, useValue: '/' }]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

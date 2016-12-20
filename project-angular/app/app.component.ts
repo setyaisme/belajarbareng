@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'my-app',
@@ -12,31 +13,23 @@ import { Component } from '@angular/core';
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project Angular</a>
+          <a class="navbar-brand" [routerLink]="['/']">Project Angular</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/']">Home</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/about']">About</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/contact']">Contact</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </nav>
 
     <div class="container">
-
-      <div class="starter-template">
-        <h1>Welcome to {{name}} Project</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      <div class="outer-outlet">
+        <router-outlet></router-outlet>
       </div>
-
-    </div>`,
-  styles: [`
-    .starter-template {
-      padding: 40px 15px;
-      text-align: center;
-    }
-  `]
+    </div>
+  `
 })
-export class AppComponent  { name = 'Angular'; }
+export class AppComponent  { }
